@@ -1,36 +1,57 @@
 # Homebrew Tap for Ordinator
 
-This is the Homebrew tap for [Ordinator](https://github.com/ceterus/ordinator), a CLI tool for managing macOS dotfiles, system settings, and secrets.
+This is the Homebrew tap for [Ordinator](https://github.com/ordinators/ordinator), a CLI tool for managing macOS dotfiles, system settings, and secrets.
 
 ## Installation
 
 ```bash
-# Install directly
-brew install ceterus/ordinator/ordinator
+# Install Ordinator
+brew install ordinators/ordinator/ordinator
 
-# Or tap first, then install
-brew tap ceterus/ordinator
+# Or tap and install
+brew tap ordinators/ordinator
 brew install ordinator
 ```
 
 ## What is Ordinator?
 
-Ordinator is a Rust-based CLI tool for managing macOS dotfiles, system settings, and secrets, allowing users to replicate their environment across machines in a secure, repeatable, and non-interactive way.
+Ordinator is a powerful CLI tool written in Rust that helps you:
 
-### Features
+- **Manage dotfiles** with Git-based version control
+- **Secure secrets** using Mozilla SOPS + age encryption
+- **Bootstrap environments** with profile-based configurations
+- **Automate system setup** with dry-run capabilities
+- **Integrate with Homebrew** for package management
 
-- ✅ Dotfiles Management
-- ✅ Bootstrap Process  
-- ✅ Profile Support
-- ✅ Secrets Management (SOPS + age)
-- ✅ Git Integration
-- ✅ macOS-Specific Enhancements
-- ✅ Dry-Run Mode
+## Features
+
+- ✅ Dotfiles management with symlink handling
+- ✅ Profile-based configurations (work, personal, laptop)
+- ✅ Secrets encryption and management
+- ✅ Git-inspired CLI commands
+- ✅ macOS-specific optimizations
+- ✅ Dry-run mode for safe previews
+
+## Quick Start
+
+```bash
+# Install
+brew install ordinators/ordinator/ordinator
+
+# Initialize
+ordinator init
+
+# Add files
+ordinator add ~/.zshrc
+
+# Apply configuration
+ordinator apply
+```
 
 ## Documentation
 
-For more information, visit the [main repository](https://github.com/ceterus/ordinator).
+For more information, visit the [main repository](https://github.com/ordinators/ordinator).
 
 ## License
 
-MIT License - see the [main repository](https://github.com/ceterus/ordinator) for details.
+MIT License - see the [main repository](https://github.com/ordinators/ordinator) for details.
