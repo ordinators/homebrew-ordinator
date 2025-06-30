@@ -9,14 +9,7 @@ class Ordinator < Formula
   depends_on "rust" => :build
 
   def install
-    # Override CPU target and add compilation optimizations
-    ENV["RUSTFLAGS"] = "-C target-cpu=native -C codegen-units=1"
-    ENV["CARGO_NET_TIMEOUT"] = "300"
-    ENV["CARGO_BUILD_JOBS"] = ENV.make_jobs.to_s
-    
-    # Use cargo build instead of install for more control
-    system "cargo", "build", "--release", "--locked", "--verbose"
-    bin.install "target/release/ordinator"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
