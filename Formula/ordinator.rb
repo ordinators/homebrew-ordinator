@@ -9,7 +9,8 @@ class Ordinator < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--path", "."
+    system "cargo", "build", "--release"
+    bin.install "target/release/ordinator"
   end
 
   test do
