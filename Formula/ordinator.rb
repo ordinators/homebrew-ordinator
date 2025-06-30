@@ -9,10 +9,7 @@ class Ordinator < Formula
   depends_on "rust" => :build
 
   def install
-    # Use parallel compilation and optimize for speed
-    ENV["CARGO_BUILD_JOBS"] = ENV.make_jobs.to_s
-    system "cargo", "build", "--release"
-    bin.install "target/release/ordinator"
+    system "cargo", "install", "--locked", "--root", prefix, "--path", "."
   end
 
   test do
