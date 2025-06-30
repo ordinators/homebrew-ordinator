@@ -9,6 +9,8 @@ class Ordinator < Formula
   depends_on "rust" => :build
 
   def install
+    # Override CPU target to use native architecture instead of westmere
+    ENV["RUSTFLAGS"] = "-C target-cpu=native"
     system "cargo", "install", "--locked", "--verbose", "--root", prefix, "--path", "."
   end
 
