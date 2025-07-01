@@ -9,6 +9,11 @@ class Ordinator < Formula
   depends_on "rust" => :build
 
   def install
+    # Set OpenSSL environment variables to use Homebrew's OpenSSL
+    # This ensures git2 links against Homebrew's OpenSSL instead of system OpenSSL
+    ENV["LDFLAGS"] = "-L#{Formula["openssl@3"].opt_lib}"
+    ENV["CPPFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
+    
     system "cargo", "install", *std_cargo_args
   end
 
