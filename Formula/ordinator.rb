@@ -13,11 +13,10 @@ class Ordinator < Formula
     # This ensures git2 links against Homebrew's OpenSSL instead of system OpenSSL
     ENV["LDFLAGS"] = "-L#{Formula["openssl@3"].opt_lib}"
     ENV["CPPFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
-    
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system "#{bin}/ordinator", "--version"
+    system bin/"ordinator", "--version"
   end
 end
