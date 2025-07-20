@@ -1,8 +1,8 @@
 class Ordinator < Formula
   desc "Dotfiles and Environment Manager for macOS"
   homepage "https://github.com/ordinators/ordinator"
-  url "https://github.com/ordinators/ordinator/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "d0e57f079e420fcce9b14030af6cda9481a20e4fa760a890621cf895e3469a74"
+  url "https://github.com/ordinators/ordinator/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "a2ada1eb6e54bd29fc6c191e7f6f36ef46104ce7fbda4f2ae6f1dc524a979f67"
   license "MIT"
   head "https://github.com/ordinators/ordinator.git", branch: "master"
 
